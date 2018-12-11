@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ContentTopiOSKeyboard"
+             xmlns:controls="clr-namespace:ContentTopiOSKeyboard.CustomControls"
+             x:Class="ContentTopiOSKeyboard.MainPage">
+
+    <AbsoluteLayout>
+        <controls:CustomChatGrid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" 
+                  BackgroundColor="LightPink">
+                <Label Text="Top content zone" 
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"/>
+            </Grid>
+
+            <Grid Grid.Row="1" 
+                  BackgroundColor="LightCoral">
+                <Label Text="Chats content zone"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"/>
+            </Grid>
+
+            <Grid Grid.Row="2" 
+                  BackgroundColor="LightGray">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Entry Grid.Column="0"
+                       Margin="6"
+                       Placeholder="Write here"
+                       HorizontalTextAlignment="Start">
+                </Entry>
+
+                <Button Grid.Column="1" 
+                        Text="Send" 
+                        FontSize="Micro">
+                    <Button.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <OnPlatform.Platforms>
+                                <On Platform="iOS" Value="5,1,10,1" />
+                            </OnPlatform.Platforms>
+                        </OnPlatform>
+                    </Button.Margin>
+                </Button>
+            </Grid>
+            
+        </controls:CustomChatGrid>
+    </AbsoluteLayout>
+
+</ContentPage>
